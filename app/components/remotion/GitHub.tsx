@@ -31,10 +31,11 @@ export const GithubDemo: React.FC<{
   return (
     <AbsoluteFill
       style={{
-        backgroundColor: "#fff",
+        // backgroundColor: "#fff",
         justifyContent: "center",
         alignItems: "center",
       }}
+      className='bg-red-500'
     >
       <div
         style={{ display: "flex", flexDirection: "row", alignItems: "center" }}

@@ -45,8 +45,10 @@ export const meta: MetaFunction = () => {
 
 // https://remix.run/guides/routing#index-routes
 export default function Index() {
-  const actionData = useActionData<ActionData>();
+  // const actionData = useActionData<ActionData>();
   const transition = useTransition();
+
+  const actionData = {username: 'artdevgame'}
 
   return (
     <div>

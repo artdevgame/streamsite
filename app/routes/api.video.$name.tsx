@@ -5,8 +5,9 @@ import path from "path";
 import { bundle } from "@remotion/bundler";
 import { getCompositions, renderFrames, stitchFramesToVideo } from "@remotion/renderer";
 
-import type { LoaderFunction } from "@remix-run/node";
+import { webpackOverride } from "../../webpack-override";
 
+import type { LoaderFunction } from "@remix-run/node";
 const compositionId = "GitHub";
 
 export const loader: LoaderFunction = async ({ params, request }) => {
@@ -15,7 +16,11 @@ export const loader: LoaderFunction = async ({ params, request }) => {
   console.log("Incoming request for: ", name);
 
   try {
-    let userData;
+    let userData = {
+        avatar_url: 'https://avatars.githubusercontent.com/u/353729?v=4',
+        login: 'artdevgame',
+        followers: 24
+      };
 
     if (!userData) {
       const gitHubResponse = await fetch(
@@ -47,7 +52,9 @@ export const loader: LoaderFunction = async ({ params, request }) => {
       data: userData,
     };
 
-    const bundled = await bundle(path.join(__dirname, "../app/video.tsx"));
+    const bundled = await bundle(path.join(__dirname, "../app/video.tsx"), undefined, {
+      webpackOverride
+    });
     const comps = await getCompositions(bundled, {
       inputProps: videoProps,
     });

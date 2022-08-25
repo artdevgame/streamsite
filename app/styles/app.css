@@ -774,6 +774,11 @@ select {
   background-color: rgb(79 70 229 / var(--tw-bg-opacity));
 }
 
+.bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+
 .p-8 {
   padding: 2rem;
 }
