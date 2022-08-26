@@ -3,11 +3,9 @@ import os from 'os';
 import path from 'path';
 
 import { bundle } from '@remotion/bundler';
-import {
-    getCompositions, renderFrames, renderMedia, stitchFramesToVideo
-} from '@remotion/renderer';
+import { getCompositions, renderMedia } from '@remotion/renderer';
 
-import { webpackOverride } from '../webpack-override';
+import { webpackOverride } from '../remotion/webpack-override';
 
 import type { LoaderFunction } from '@remix-run/node';
 
@@ -51,7 +49,7 @@ export const loader: LoaderFunction = async ({ params, request }) => {
     const inputProps = { data: userData };
 
     const bundleLocation = await bundle(
-      path.resolve(__dirname, '../app/video.tsx'),
+      path.resolve(__dirname, '../app/remotion/index.tsx'),
       () => undefined,
       { webpackOverride }
     );

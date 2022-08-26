@@ -1,3 +1,5 @@
+import '../../styles/app.css';
+
 import React from 'react';
 import {
     AbsoluteFill, Img, interpolate, measureSpring, spring, useCurrentFrame, useVideoConfig
