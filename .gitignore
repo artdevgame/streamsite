@@ -1,11 +1,8 @@
 node_modules
 
 /.cache
-/public/build
-/.netlify
+/build
 .env
 
 yarn.lock
 package-lock.json
-
-build

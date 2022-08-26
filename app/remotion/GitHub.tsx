@@ -1,4 +1,4 @@
-import '../../styles/app.css';
+import '../../styles/tailwind.css';
 
 import React from 'react';
 import {
