@@ -1,5 +1,5 @@
-import { registerRoot } from "remotion";
+import { registerRoot } from 'remotion';
 
-import { RemotionVideo } from "./components/remotion/Video";
+import { RemotionVideo } from './components/remotion/Video';
 
 registerRoot(RemotionVideo);
