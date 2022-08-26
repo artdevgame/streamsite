@@ -1,5 +1,7 @@
-import React from "react";
-import { AbsoluteFill, Img, interpolate, measureSpring, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import React from 'react';
+import {
+    AbsoluteFill, Img, interpolate, measureSpring, spring, useCurrentFrame, useVideoConfig
+} from 'remotion';
 
 export type GithubResponse = {
   login: string;
@@ -30,12 +32,12 @@ export const GithubDemo: React.FC<{
 
   return (
     <AbsoluteFill
-      style={{
-        // backgroundColor: "#fff",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-      className='bg-red-500'
+      // style={{
+      //   // backgroundColor: "#fff",
+      //   justifyContent: "center",
+      //   alignItems: "center",
+      // }}
+      className="bg-red-500"
     >
       <div
         style={{ display: "flex", flexDirection: "row", alignItems: "center" }}
@@ -51,14 +53,10 @@ export const GithubDemo: React.FC<{
         />
         <div style={{ width: 60 }} />
         <div>
-          <h1
-            style={{ transform: `translateY(${titleTranslation}px)` }}
-          >
+          <h1 style={{ transform: `translateY(${titleTranslation}px)` }}>
             Hi {data?.login}!
           </h1>
-          <p
-            style={{ opacity: subtitleOpacity }}
-          >
+          <p style={{ opacity: subtitleOpacity }}>
             You have {data?.followers} followers.
           </p>
         </div>

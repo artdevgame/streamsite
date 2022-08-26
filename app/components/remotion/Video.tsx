@@ -1,6 +1,8 @@
-import { Composition } from "remotion";
+import '../styles/app.css';
 
-import { GithubDemo } from "./GitHub";
+import { Composition } from 'remotion';
+
+import { GithubDemo } from './GitHub';
 
 export const RemotionVideo: React.FC = () => {
   return (

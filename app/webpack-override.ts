@@ -1,7 +1,7 @@
-import type { WebpackOverrideFn } from "remotion";
+import type { WebpackOverrideFn } from 'remotion';
 
 export const webpackOverride: WebpackOverrideFn = (currentConfiguration) => {
-  const config = {
+  return {
     ...currentConfiguration,
     module: {
       ...currentConfiguration.module,
@@ -10,10 +10,10 @@ export const webpackOverride: WebpackOverrideFn = (currentConfiguration) => {
           ? currentConfiguration.module.rules
           : []
         ).filter((rule) => {
-          if (rule === "...") {
+          if (rule === '...') {
             return false;
           }
-          if (rule.test?.toString().includes(".css")) {
+          if (rule.test?.toString().includes('.css')) {
             return false;
           }
           return true;
@@ -21,16 +21,16 @@ export const webpackOverride: WebpackOverrideFn = (currentConfiguration) => {
         {
           test: /\.css$/i,
           use: [
-            "style-loader",
-            "css-loader",
+            'style-loader',
+            'css-loader',
             {
-              loader: "postcss-loader",
+              loader: 'postcss-loader',
               options: {
                 postcssOptions: {
                   plugins: [
-                    "postcss-preset-env",
-                    "tailwindcss",
-                    "autoprefixer",
+                    'postcss-preset-env',
+                    'tailwindcss',
+                    'autoprefixer',
                   ],
                 },
               },
@@ -40,8 +40,4 @@ export const webpackOverride: WebpackOverrideFn = (currentConfiguration) => {
       ],
     },
   };
-
-  console.log(JSON.stringify(config.module.rules));
-
-  return config;
 };
