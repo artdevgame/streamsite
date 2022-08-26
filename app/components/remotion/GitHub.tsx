@@ -1,12 +1,6 @@
 import React from 'react';
 import {
-  AbsoluteFill,
-  Img,
-  interpolate,
-  measureSpring,
-  spring,
-  useCurrentFrame,
-  useVideoConfig,
+    AbsoluteFill, Img, interpolate, measureSpring, spring, useCurrentFrame, useVideoConfig
 } from 'remotion';
 
 export type GithubResponse = {

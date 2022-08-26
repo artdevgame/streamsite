@@ -1,3 +1,5 @@
+import '../../../styles/app.css';
+
 import { Composition } from 'remotion';
 
 import { GithubDemo } from './GitHub';
